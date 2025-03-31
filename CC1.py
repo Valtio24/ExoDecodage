@@ -19,7 +19,7 @@ print (FunctionDecode(AncienMessage))
 ancienmessage=FunctionDecode(AncienMessage)
 
 def enleveMauvaisMot(bonneList):
-    mauvaisMot = ['rhubarb',  'watermelon', 'ximenia', 'nut', 'zucchini',
+    mauvaisMot = ['rhubarb', 'quince', 'watermelon', 'ximenia', 'nut', 'zucchini',
 'blackberry', 'vine', 'cranberry',
  'durian', 'papaya', 'huckleberry', 'jujube', 'xerophyte', 'elderberry',
 'tangerine', 'satsuma',
@@ -32,11 +32,14 @@ def enleveMauvaisMot(bonneList):
  'nectarine', 'cherry', 'fennel', 'elderflower', 'quandary', 'blueberry',
 'quandong', 'zest',
  'wildberry', 'yellow', 'apricot', 'onion', 'cantaloupe', 'nutmeg',
-'persimmon', 'mandarin', 'olive','lemon', 'tamarillo', 'ugli', 'mango', 'grape', 'banana', 'jackfruit','gooseberry', 'vanilla','mulberry', 'kumquat', 'peach', 'feijoa']
-    flag = False
+'persimmon', 'mandarin', 'olive',
+ 'lemon', 'tamarillo', 'ugli', 'mango', 'grape', 'banana', 'jackfruit',
+'gooseberry', 'vanilla',
+ 'mulberry', 'kumquat', 'peach', 'feijoa']
     listeenl=[]
     for i in range(len(bonneList)):
-        flag == False
+        flag = False
+
         for j in range (len(mauvaisMot)):
             if mauvaisMot[j]== bonneList[i]:
                 flag=True
@@ -44,7 +47,8 @@ def enleveMauvaisMot(bonneList):
             listeenl.append(bonneList[i])
     return(listeenl)
 
-print(enleveMauvaisMot(FunctionDecode(AncienMessage),))
+print(enleveMauvaisMot(FunctionDecode(AncienMessage)))
+messageOrdre = enleveMauvaisMot(FunctionDecode(AncienMessage))
 
 
 
@@ -54,6 +58,8 @@ def TrieurText(teeext):
     return (
         TrieurText([x for x in teeext[1:] if x < teeext[0]]) + [teeext[0]] + TrieurText([x for x in teeext[1:] if x >= teeext[0]])
     )
+cléTrié =TrieurText(messageOrdre)
+print(cléTrié)
 
 
 
@@ -65,7 +71,8 @@ def FinalText(TExt,textadecode):
                 finalText.append(j+1)
     return(finalText)
 
-
+Finn = FinalText(cléTrié,readedText.lower().split(" "))
+print(Finn)
 
 def FinalFunction(TExt):
     fffinal = []
@@ -75,6 +82,9 @@ def FinalFunction(TExt):
         if number < 35:
             fffinal.append(alphabet[number])
     return (fffinal)
+
+Lueuer = FinalFunction(Finn)
+print(Lueuer)
 
 
 
